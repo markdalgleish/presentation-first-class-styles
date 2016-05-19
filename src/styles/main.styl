@@ -1,0 +1,563 @@
+// New to Stylus? Check out http://learnboost.github.io/stylus
+// Use modern CSS thanks to Autoprefixer: https://github.com/ai/autoprefixer
+
+// Import CSS from "node_modules" and "bower_components"
+// thanks to Stylus' "import css" and "paths" options
+
+@import 'prism/themes/prism-okaidia.css'
+// Check out "bower_components/prism/themes/" for available themes
+
+li
+  font-family: didot, times new roman, serif
+  font-style: italic
+
+.avatar
+  width: 100px
+  border-radius: @width
+  .avatars &
+    width: 80px
+    display: inline-block
+    margin: 10px 10px 0
+  .big-avatars &
+    width: 120px
+    margin: 16px 16px 0
+
+.avatars
+  margin: 0 60px
+
+.seek-logo
+  background-image: url('../images/seek.svg')
+  width: 300px
+  height: 300px
+  background-size: auto 100%
+  position: relative
+  left: 3px
+  &.small
+    width: 150px
+    height: 150px
+
+.static
+  background-size: contain
+  background-repeat: no-repeat
+  transform: translateZ(0) none !important
+  &.bespoke-backdrop-active
+    opacity: 1
+
+.space
+  background-image: url('../images/space.jpg')
+  transform-origin: 50% 100%
+  &.bespoke-backdrop-active
+    transition: opacity 5s ease, transform 20s ease
+
+.chapter-13
+  background-image: url('../images/chapter-13.jpg')
+  background-position: 50% 20%
+
+.css-zen-garden-0
+  background-image: url('../images/css-zen-garden-0.png')
+.css-zen-garden-1
+  background-image: url('../images/css-zen-garden-1.png')
+.css-zen-garden-2
+  background-image: url('../images/css-zen-garden-2.png')
+.css-zen-garden-3
+  background-image: url('../images/css-zen-garden-3.png')
+
+.initial-commit
+  background-color: white
+  background-image: url('../images/initial-commit.png')
+  background-position: 0 50%
+  transform-origin: 20% 30%
+
+.gulp-logo
+  background-image: url('../images/gulp-logo.jpg')
+  &.bespoke-backdrop-active
+    opacity: 1
+
+.sass-logo
+  background-image: url('../images/sass-logo.png')
+  &.bespoke-backdrop-active
+    opacity: 1
+
+.postcss-logo
+  background-image: url('../images/postcss-logo-dark.png')
+  &.bespoke-backdrop-active
+    opacity: 1
+
+.lego
+  background-image: url('../images/lego.gif')
+  &.bespoke-backdrop-active
+    opacity: .1
+
+[data-bespoke-backdrop="bem"]
+  color: black
+.bem
+  background-image: url('../images/bem.svg')
+  background-size: contain
+  background-repeat: no-repeat
+  transform: translateZ(0) translateZ(0) translateX(9%) translateY(-20px) scale(1)
+  &.bespoke-backdrop-active
+    opacity: 1
+  &.bespoke-backdrop-active,
+  &.bespoke-backdrop-before
+    transform: translateZ(0) translateZ(0) translateX(9%) translateY(-20px) scale(0.6)
+
+[data-bespoke-backdrop="jquery-ui-datepicker"]
+  h2
+    background: black
+    padding: 20px 18px 20px 30px
+.jquery-ui-datepicker
+  background-image: url('../images/jquery-ui-datepicker.png')
+  background-position: 0 50%
+  &.bespoke-backdrop-active
+    opacity: .5
+
+.react
+  background-image: url('../images/react.png')
+
+.bespoke-bullet.show
+  opacity: 1
+
+.circles
+  position: absolute
+  z-index: 1
+  width: 270px
+  height: 150px
+  top: 50%
+  left: 50%
+  margin-left: -135px
+  margin-top: -75px
+  &.circles--multiple
+    z-index: 0
+  div
+    transition: all 1s cubic-bezier(0.725, -0.365, 0.175, 1.000)
+    width: 150px
+    height: 150px
+    border-radius: 150px
+    position: absolute
+    top: 0
+    left: 50%
+    margin-left: -75px
+    &:after
+      display: block
+      width: 100%
+      text-align: center
+      color: #222
+      line-height: 150px
+      font-size: 30px
+  .css
+    z-index: 1
+    background: white
+    .show-css-and-js.bespoke-bullet-active &
+      transform: translateZ(0) translateX(60px)
+    &:after
+      content: 'CSS'
+    &.style:after
+      content: 'Style'
+  .js
+    background: yellow
+    &:after
+      content: 'JS'
+    .show-css-and-js.bespoke-bullet-active &
+      transform: translateZ(0) translateX(-60px)
+  .component
+    opacity: 0
+    transition: all .6s ease
+    border: 1px solid #888
+    background: #111
+    transform: translateZ(0) scale(2.5)
+    z-index: -1
+    &:after
+      content: 'Component'
+      position: absolute
+      top: 0
+      color: #888
+      font-size: 14px
+      top: -48px
+    .show-component.bespoke-bullet-active &
+      opacity: 1
+  .local-scope
+    &:after
+      content: 'Local Scope'
+
+.show-component-tree
+  transition: all 1.6s cubic-bezier(0.725, -0.365, 0.175, 1.000)
+  &.bespoke-bullet-active
+    transform: translateZ(0) translateY(-150px) scale(0.3)
+
+.show-bigger-component-tree
+  transition: all 2.2s cubic-bezier(0.725, -0.365, 0.175, 1.000)
+  &.bespoke-bullet-active
+    transform: translateZ(0) scale(0.5)
+
+.show-app-boundary
+  transition: all 1s cubic-bezier(0.725, -0.365, 0.175, 1.000)
+  transform-origin: 100% 300%
+  &.bespoke-bullet-active
+    transform: translateZ(0) scale(0.75)
+
+.show-style-guide-boundary
+  transition: all 1s cubic-bezier(0.725, -0.365, 0.175, 1.000)
+
+  &.bespoke-bullet-active
+    transform: translateZ(0) scale(0.65) translateX(-2800px) translateY(600px)
+
+.boundary
+  border-radius: 40px;
+  opacity: 0;
+  transition: all 0.6s ease;
+  transition-delay: .6s;
+  border: 3px solid #fff;
+  transform: translateZ(0) scale(2.5);
+  z-index: -1;
+  position: absolute;
+
+.app-boundary
+  width: 2050px;
+  height: 1370px;
+  top: 620px;
+  left: -1000px;
+  &:after
+    content: 'Application'
+    position: absolute
+    color: #fff
+    font-size: 120px;
+    top: 1172px;
+    left: 740px;
+  .show-app-boundary.bespoke-bullet-active &
+    transition-delay: 0
+    opacity: 1
+
+.style-guide-boundary
+  width: 2050px;
+  height: 1370px;
+  top: 620px;
+  left: 4500px;
+  &:after
+    content: 'Style Guide'
+    position: absolute
+    color: #fff
+    font-size: 120px;
+    top: 1172px;
+    left: 740px;
+  .show-style-guide-boundary.bespoke-bullet-active &
+    transition-delay: 0
+    opacity: 1
+
+.circles
+  transition: all 1s cubic-bezier(0.725, -0.365, 0.175, 1.000)
+
+.circles--multiple-0,
+.circles--multiple-8
+  transition-delay: .3s
+.circles--multiple-1
+.circles--multiple-9
+  transition-delay: .35s
+.circles--multiple-2,
+.circles--multiple-10
+  transition-delay: .4s
+.circles--multiple-3,
+.circles--multiple-11
+  transition-delay: .45s
+.circles--multiple-4,
+.circles--multiple-12
+  transition-delay: .5s
+.circles--multiple-5,
+.circles--multiple-13
+  transition-delay: .55s
+.circles--multiple-6,
+.circles--multiple-14
+  transition-delay: .6s
+.circles--multiple-7,
+.circles--multiple-15
+  transition-delay: .65s
+.circles--multiple-16
+  transition-delay: .7s
+.circles--multiple-17
+  transition-delay: .75s
+.circles--multiple-18
+  transition-delay: .8s
+.circles--multiple-19
+  transition-delay: .85s
+.circles--multiple-20
+  transition-delay: .9s
+.circles--multiple-21
+  transition-delay: .95s
+.circles--multiple-22
+  transition-delay: 1s
+.circles--multiple-23
+  transition-delay: 1.05s
+
+.show-component-tree.bespoke-bullet-active
+  .circles--multiple-0
+    transform: translateZ(0) translateY(500px) translateX(-500px)
+  .circles--multiple-1
+    transform: translateZ(0) translateY(500px)
+  .circles--multiple-2
+    transform: translateZ(0) translateY(500px) translateX(500px)
+  .circles--multiple-3
+    transform: translateZ(0) translateY(1000px) translateX(-1000px)
+  .circles--multiple-4
+    transform: translateZ(0) translateY(1000px) translateX(-500px)
+  .circles--multiple-5
+    transform: translateZ(0) translateY(1000px)
+  .circles--multiple-6
+    transform: translateZ(0) translateY(1000px) translateX(500px)
+  .circles--multiple-7
+    transform: translateZ(0) translateY(1000px) translateX(1000px)
+
+.show-bigger-component-tree.bespoke-bullet-active
+  .circles--multiple-8
+    transform: translateZ(0) translateY(1500px) translateX(-1500px)
+  .circles--multiple-9
+    transform: translateZ(0) translateY(1500px) translateX(-1000px)
+  .circles--multiple-10
+    transform: translateZ(0) translateY(1500px) translateX(-500px)
+  .circles--multiple-11
+    transform: translateZ(0) translateY(1500px)
+  .circles--multiple-12
+    transform: translateZ(0) translateY(1500px) translateX(500px)
+  .circles--multiple-13
+    transform: translateZ(0) translateY(1500px) translateX(1000px)
+  .circles--multiple-14
+    transform: translateZ(0) translateY(1500px) translateX(1500px)
+  .circles--multiple-15
+    transform: translateZ(0) translateY(2000px) translateX(-2000px)
+  .circles--multiple-16
+    transform: translateZ(0) translateY(2000px) translateX(-1500px)
+  .circles--multiple-17
+    transform: translateZ(0) translateY(2000px) translateX(-1000px)
+  .circles--multiple-18
+    transform: translateZ(0) translateY(2000px) translateX(-500px)
+  .circles--multiple-19
+    transform: translateZ(0) translateY(2000px)
+  .circles--multiple-20
+    transform: translateZ(0) translateY(2000px) translateX(500px)
+  .circles--multiple-21
+    transform: translateZ(0) translateY(2000px) translateX(1000px)
+  .circles--multiple-22
+    transform: translateZ(0) translateY(2000px) translateX(1500px)
+  .circles--multiple-23
+    transform: translateZ(0) translateY(2000px) translateX(2000px)
+
+.show-style-guide-boundary.bespoke-bullet-active
+  xOffset = 250
+  yOffest = 0
+  .circles--multiple-1
+    transform: translateZ(0) translateY(250px + yOffest) translateX(4000px + xOffset)
+  .circles--multiple-4
+    transform: translateZ(0) translateY(750px + yOffest) translateX(4000px + xOffset)
+  .circles--multiple-6
+    transform: translateZ(0) translateY(750px + yOffest) translateX(4500px + xOffset)
+  .circles--multiple-9
+    transform: translateZ(0) translateY(1250px + yOffest) translateX(4000px + xOffset)
+  .circles--multiple-11
+    transform: translateZ(0) translateY(1250px + yOffest) translateX(4500px + xOffset)
+  .circles--multiple-13
+    transform: translateZ(0) translateY(1250px + yOffest) translateX(5000px + xOffset)
+  .circles--multiple-15
+    transform: translateZ(0) translateY(1750px + yOffest) translateX(4000px + xOffset)
+  .circles--multiple-16
+    transform: translateZ(0) translateY(1750px + yOffest) translateX(4500px + xOffset)
+  .circles--multiple-18
+    transform: translateZ(0) translateY(1750px + yOffest) translateX(5000px + xOffset)
+  .circles--multiple-20
+    transform: translateZ(0) translateY(1750px + yOffest) translateX(5500px + xOffset)
+  .circles--multiple-22
+    transform: translateZ(0) translateY(1750px + yOffest) translateX(6000px + xOffset)
+  .circles--multiple-23
+    transform: translateZ(0) translateY(1750px + yOffest) translateX(6500px + xOffset)
+
+
+// Webpack logo stuff
+@import './webpack-logo.css'
+
+.webpack-logo
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 200px
+  height: 200px
+  margin-bottom: -48px
+  margin-left: -100px
+  margin-top: -110px
+  zoom: 3
+  transform: translateZ(0) scale(1)
+  opacity: 0.6
+
+.logo
+  transform: translateZ(0) rotateX(0deg)
+
+// New stuff...
+
+ul.minimal li:before
+  display: none
+
+.vjeux
+  background-image: url('../images/vjeux.jpg')
+  transform-origin: 55% 20%
+  &.bespoke-backdrop-active
+    opacity: .2
+
+.css-in-js-slide
+  background-image: url('../images/css-in-js-slide.png')
+  background-color: black
+  background-size: contain
+  background-repeat: no-repeat
+  transform: translateZ(0) none
+  &.bespoke-backdrop-active
+    opacity: 1
+
+.michelebertoli
+  background-image: url('../images/michelebertoli.jpg')
+  transform-origin: 50% 30%
+  &.bespoke-backdrop-active
+    opacity: .5
+
+.geelen
+  background-image: url('../images/avatars/geelen.jpg')
+  transform-origin: 50% 30%
+  &.bespoke-backdrop-active
+    opacity: .5
+
+.andreypopp
+  background-image: url('../images/avatars/andreypopp.png')
+  transform-origin: 50% 50%
+  &.bespoke-backdrop-active
+    opacity: .2
+
+.want
+  background-image: url('../images/want.gif')
+  transform: translateZ(0) none
+  &.bespoke-backdrop-active
+    opacity: 1
+
+.legobricks
+  background-image: url('../images/legobricks.jpg')
+  transform-origin: 50% 60%
+  &.bespoke-backdrop-active
+    opacity: .3
+
+.mjackson
+  background-image: url('../images/mjackson.jpg')
+  transform-origin: 50% 30%
+  &.bespoke-backdrop-active
+    opacity: .3
+
+.larrydavid
+  background-image: url('../images/larrydavid.gif')
+  transform: translateZ(0) none !important
+  background-position: 50% 0
+  &.bespoke-backdrop-active
+    opacity: .6
+
+.scared
+  background-image: url('../images/scared.gif')
+  transform: translateZ(0) none !important
+  background-position: 50% 0
+  &.bespoke-backdrop-active
+    opacity: .4
+
+.experiment
+  background-image: url('../images/experiment.jpg')
+  background-position: 100% 0
+  transform-origin: 60% 30%
+  &.bespoke-backdrop-active
+    opacity: .4
+
+.maze
+  background-image: url('../images/maze.gif')
+  transform: translateZ(0) none !important
+  &.bespoke-backdrop-active
+    opacity: 1
+
+
+// Ryan Seddon, you legend.
+.hide-checkbox, .show-checkbox
+  opacity: 1 !important
+.hide-checkbox input,
+.hide-checkbox h2
+  transition: opacity 2s ease
+  opacity: 0
+.show-checkbox.bespoke-bullet-active input,
+.show-checkbox.bespoke-bullet-active h2
+  opacity: 1
+.takeoff
+  width: 100px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  left: 22px;
+.takeoff input + label
+  width: 56px;
+  height: 118px;
+  background: url('../images/rocket.png') 0 0 no-repeat;
+  display: block;
+  transition: transform 8s;
+  transition-timing-function: cubic-bezier(0.38, -0.1, 0.46, 0.45);
+.takeoff input:checked + label
+  height: 156px;
+  background-position: 0 100%;
+  transform: translateZ(0) translateY(-20em);
+.takeoff input ~ .stars
+  background: url('../images/star-background.jpg')
+  opacity: 0.4;
+  background-size: cover
+  position: absolute
+  z-index: -2
+  left: -500px
+  top: -1000px
+  width: 1100px
+  height: 2000px
+  transition: all 5s ease
+.takeoff input:checked ~ .stars
+  transform: translateZ(0) translateY(200px)
+  transition: all 10s ease
+  transition-delay: .3s
+.takeoff input ~ .planet
+  position: absolute;
+  bottom: -1950px;
+  left: -980px;
+  width: 2040px;
+  height: 2040px;
+  background: #222;
+  box-shadow: 0 0 50px rgba(100%, 100%, 100%, 0.5);
+  border-radius: 2040px;
+  z-index: -1;
+  transition: all 5s ease
+  transition-delay: .3s
+.takeoff input:checked ~ .planet
+  transform: translateZ(0) translateY(400px)
+
+// Newer stuff...
+
+.aphrodite
+  background-image: url('../images/aphrodite.jpg')
+  background-position: 50% 70%
+  transform-origin: 60% 30%
+  // filter: grayscale(100%)
+  &.bespoke-backdrop-active
+    opacity: .6
+
+.jlfwong
+  background-image: url('../images/jlfwong.png')
+  background-position: 50% 70%
+  transform-origin: 60% 30%
+  filter: blur(10px)
+  &.bespoke-backdrop-active
+    opacity: .3
+
+.emoji
+  font-size: 80px;
+
+section.code-columns
+  transform: translateZ(0) translateZ(0)
+pre.left,
+pre.right
+  position: absolute;
+  width: 30%;
+  top: 5%
+  left: 50%;
+pre.left
+  transform: translateZ(0) translateX(-80%)
+pre.right
+  transform: translateZ(0) translateX(0%)
